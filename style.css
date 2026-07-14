@@ -1,0 +1,148 @@
+:root {
+  --encre: #1c2b3a;
+  --papier: #f7f4ee;
+  --or: #c9922a;
+  --ligne: #d8d0bf;
+  --gris: #5a6472;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--papier);
+  color: var(--encre);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--encre);
+  color: var(--papier);
+  padding: 1.5rem 2rem;
+}
+
+header .marque {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+header .marque span { color: var(--or); }
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.8rem;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+}
+
+nav a {
+  color: var(--papier);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+nav a:hover, nav a.actif {
+  border-bottom-color: var(--or);
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+h1 {
+  font-size: 2.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.souligne {
+  width: 60px;
+  height: 3px;
+  background: var(--or);
+  margin: 0.6rem 0 1.6rem;
+}
+
+.carte {
+  border: 1px solid var(--ligne);
+  border-radius: 4px;
+  padding: 1.2rem 1.4rem;
+  margin: 1rem 0;
+  background: white;
+}
+
+.carte h3 { margin-top: 0; color: var(--encre); }
+
+.carte h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.carte h3 a:hover {
+  color: var(--or);
+  text-decoration: underline;
+}
+
+.bouton {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  background: var(--or);
+  color: var(--encre);
+  padding: 0.7rem 1.4rem;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.bouton:hover { opacity: 0.85; }
+
+.exo {
+  border: 1px solid var(--ligne);
+  border-left: 4px solid var(--or);
+  border-radius: 4px;
+  padding: 1.2rem 1.4rem;
+  margin: 1.4rem 0;
+  background: white;
+}
+
+.exo h4 {
+  margin-top: 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gris);
+}
+
+.exo summary {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: var(--encre);
+  cursor: pointer;
+  margin-top: 0.8rem;
+  padding: 0.5rem 0;
+}
+
+.exo summary:hover { color: var(--or); }
+
+.exo .reponse {
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--ligne);
+}
+
+footer {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  color: var(--gris);
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--ligne);
+  margin-top: 2rem;
+}

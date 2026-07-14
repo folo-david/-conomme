@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Économétrie - Tutorat Éco</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="marque">Tutorat<span>Éco</span></div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="cours.html" class="actif">Mes cours</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <p><a href="cours.html">← Retour à Mes cours</a></p>
+    <h1>Économétrie</h1>
+    <div class="souligne"></div>
+
+    <p>
+      L'économétrie permet de tester des relations économiques avec des
+      données réelles. Ce cours va de la régression simple jusqu'aux
+      problèmes courants qui biaisent les résultats.
+    </p>
+
+    <div class="carte">
+      <h3>Ce que couvre ce cours</h3>
+      <p>Régression linéaire simple et multiple, interprétation des coefficients, tests t et F, R², hétéroscédasticité.</p>
+    </div>
+
+    <div class="carte">
+      <h3>Notion clé : l'hétéroscédasticité</h3>
+      <p>
+        C'est quand la variance des erreurs n'est pas constante selon les
+        observations. Cela ne biaise pas les coefficients, mais rend les
+        tests de significativité non fiables si on ne la corrige pas.
+      </p>
+    </div>
+
+    <div class="exo">
+      <h4>Sujet type — inspiré d'une épreuve de Licence 3, Université Cheikh Anta Diop (Dakar)</h4>
+      <p>
+        Une régression donne : ŷ = 2,1 + 0,85x (écart-type de 0,85 : 0,21), avec n = 40,
+        R² = 0,62. Testez la significativité du coefficient de x au seuil de 5 % et
+        interprétez R².
+      </p>
+      <details>
+        <summary>Voir le corrigé</summary>
+        <div class="reponse">
+          <p><strong>Test de significativité :</strong> t = 0,85 / 0,21 = 4,05. Avec n − 2 = 38 degrés de liberté, la valeur critique à 5 % est environ 2,02. Comme 4,05 > 2,02, on rejette H0 : le coefficient est significatif.</p>
+          <p><strong>Interprétation de R² :</strong> 62 % de la variance de y est expliquée par x. C'est une part correcte mais il reste 38 % expliqués par d'autres facteurs non inclus dans le modèle.</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exo">
+      <h4>Sujet proposé par TutoratÉco</h4>
+      <p>
+        Vous estimez le salaire en fonction de l'expérience et obtenez un R² très élevé
+        (0,95), mais aucun coefficient n'est significatif individuellement (tests t faibles).
+        Quel problème économétrique cela évoque-t-il, et pourquoi ?
+      </p>
+      <details>
+        <summary>Voir le corrigé</summary>
+        <div class="reponse">
+          <p>
+            C'est le signe classique d'une <strong>multicolinéarité</strong> entre les
+            variables explicatives : elles sont fortement corrélées entre elles, donc le
+            modèle explique bien y dans l'ensemble (R² élevé), mais il devient impossible
+            de distinguer la contribution propre de chaque variable, ce qui gonfle les
+            écarts-types et fait chuter les tests t.
+          </p>
+        </div>
+      </details>
+    </div>
+
+    <a href="contact.html" class="bouton">Réserver une séance sur ce cours</a>
+  </main>
+
+  <footer>
+    Site d'exemple &mdash; créé pour apprendre le HTML
+  </footer>
+
+</body>
+</html>

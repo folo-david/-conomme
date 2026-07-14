@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Stata - Tutorat Éco</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="marque">Tutorat<span>Éco</span></div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="cours.html" class="actif">Mes cours</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <p><a href="cours.html">← Retour à Mes cours</a></p>
+    <h1>Prise en main de Stata</h1>
+    <div class="souligne"></div>
+
+    <p>
+      Stata est le logiciel de référence pour l'analyse de données en
+      économie. Ce cours part de zéro : on apprend l'interface avant de
+      lancer les premières régressions.
+    </p>
+
+    <div class="carte">
+      <h3>Ce que couvre ce cours</h3>
+      <p>Interface (fenêtres, éditeur de données, éditeur de commandes), import de données, commandes de régression de base, manipulation de données (generate, drop, keep).</p>
+    </div>
+
+    <div class="carte">
+      <h3>Commande clé : regress</h3>
+      <p>
+        La commande <code>regress y x1 x2</code> lance une régression
+        linéaire de y sur x1 et x2, et affiche coefficients, écarts-types,
+        tests t et R² directement.
+      </p>
+    </div>
+
+    <div class="exo">
+      <h4>Sujet type — inspiré d'un TP de Licence 2, Université de Kinshasa</h4>
+      <p>
+        On dispose d'une base de données `salaire.dta` avec les variables
+        <code>salaire</code>, <code>experience</code> et <code>diplome</code>.
+        Écrivez les commandes Stata pour : (1) charger la base, (2) régresser
+        salaire sur experience et diplome, (3) afficher les statistiques
+        descriptives de salaire.
+      </p>
+      <details>
+        <summary>Voir le corrigé</summary>
+        <div class="reponse">
+          <p><code>use salaire.dta, clear</code></p>
+          <p><code>regress salaire experience diplome</code></p>
+          <p><code>summarize salaire</code></p>
+          <p>
+            Remarque : <code>use ... , clear</code> évite un message d'erreur si
+            des données sont déjà chargées en mémoire. <code>summarize</code> peut
+            s'écrire en abrégé <code>sum</code>.
+          </p>
+        </div>
+      </details>
+    </div>
+
+    <div class="exo">
+      <h4>Sujet proposé par TutoratÉco</h4>
+      <p>
+        Après une régression, vous voulez tester si le modèle souffre
+        d'hétéroscédasticité. Quelle commande utilisez-vous, et que faites-vous
+        si le test est significatif ?
+      </p>
+      <details>
+        <summary>Voir le corrigé</summary>
+        <div class="reponse">
+          <p>
+            On utilise <code>estat hettest</code> juste après <code>regress</code>.
+            Si le test est significatif (p &lt; 0,05), l'hypothèse d'homoscédasticité
+            est rejetée. Dans ce cas, on relance la régression avec des écarts-types
+            robustes : <code>regress salaire experience diplome, robust</code>.
+          </p>
+        </div>
+      </details>
+    </div>
+
+    <a href="contact.html" class="bouton">Réserver une séance sur ce cours</a>
+  </main>
+
+  <footer>
+    Site d'exemple &mdash; créé pour apprendre le HTML
+  </footer>
+
+</body>
+</html>
